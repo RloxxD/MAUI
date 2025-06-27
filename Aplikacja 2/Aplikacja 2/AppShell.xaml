@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Aplikacja_2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Aplikacja_2"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    Title="Aplikacja_2">
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Margin="2" ColumnDefinitions="50,*" Padding="7" RowDefinitions="50">
+                <Image Source="{Binding Icon}" Grid.Column="0"></Image>
+                <Label Text="{Binding Title}" FontSize="Large" Grid.Column="1" VerticalOptions="Center"></Label>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.FlyoutFooter>
+        <Button x:Name="accountButton" Text="Account" FontSize="Medium" Clicked="OpenAccount"></Button>
+    </Shell.FlyoutFooter>
+    <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Step Counter"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" 
+            Icon="steps.png"/>
+
+        <ShellContent
+            Title="Notifications"
+            ContentTemplate="{DataTemplate local:Notifications}"
+            Route="Notifications"
+            Icon="notification.png"/>
+
+        <ShellContent
+            Title="Daily Tasks"
+            ContentTemplate="{DataTemplate local:Daily_Task_list}"
+            Route="Daily_Task_list"
+            Icon="tasks.png"/>
+
+        <ShellContent
+            Title="Tasks"
+            ContentTemplate="{DataTemplate local:Task_list}"
+            Route="Task_list"
+            Icon="tasks.png"/>
+    </FlyoutItem>
+
+</Shell>

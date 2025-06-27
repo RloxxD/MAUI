@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_2.Register"
+             Title="Register">
+    <VerticalStackLayout Spacing="25">
+        <Grid Padding="100" RowSpacing="10" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"></Label>
+            <Entry Grid.Column="0" Grid.Row="1" x:Name="Login" Placeholder="Login"></Entry>
+            <Entry Grid.Column="0" Grid.Row="2" x:Name="Password" Placeholder="Password" IsPassword="True"></Entry>
+            <Entry Grid.Column="0" Grid.Row="3" x:Name="Password_Repeat" Placeholder="Repeat Password" IsPassword="True"></Entry>
+            <Button Text="Register" Grid.Column="0" Grid.Row="4" Clicked="Done"></Button>
+        </Grid>
+        <Button Text="Close" Clicked="Close"></Button>
+
+    </VerticalStackLayout>
+</ContentPage>

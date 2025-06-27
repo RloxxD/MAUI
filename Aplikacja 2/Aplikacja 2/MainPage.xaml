@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_2.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="Step Counter"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                x:Name="Steps"
+                Text=""
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Start" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" 
+                FontSize="Medium"/>
+
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.Column="0" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l1" Grid.Row="0" Grid.Column="0" Text=""/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l2" Grid.Row="0" Grid.Column="1" Text=""/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="2" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l3" Grid.Row="0" Grid.Column="2" Text=""/>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="0" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l4" Grid.Row="1" Grid.Column="0" Text=""/>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l5" Grid.Row="1" Grid.Column="1" Text=""/>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="2" Stroke="#9880e5" StrokeThickness="3">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" x:Name="l6" Grid.Row="1" Grid.Column="2" Text=""/>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

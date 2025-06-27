@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_2.Notifications"
+             Title="Notifications">
+    <VerticalStackLayout>
+        <Grid HorizontalOptions="Fill" VerticalOptions="Start">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Add Notification" HorizontalOptions="Fill" x:Name="Add" Clicked="Modal_Add" FontSize="Medium"/>
+
+            <Button Grid.Column="1" x:Name="delete_Button" Text="Delete" IsEnabled="False" HorizontalOptions="Fill" Clicked="DeleteNotification" FontSize="Medium"/>
+        </Grid>
+        <Grid RowDefinitions="500,*">
+            <ListView x:Name="listNotifications" RowHeight="125" SelectionMode="Single" VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand" HorizontalOptions="Center" ItemSelected="Delete">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="5" VerticalOptions="FillAndExpand" Padding="10" HorizontalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="275"/>
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Description}"></Label>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Day_time}"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Repeat_mess}"></Label>
+                                <Label Grid.Row="2" Grid.Column="0" Text="{Binding Time_mess}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+       
+    </VerticalStackLayout>
+</ContentPage>

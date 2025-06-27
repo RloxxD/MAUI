@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_2.AddNotification"
+             Title="AddNotification">
+    <VerticalStackLayout>
+        <Label 
+            Text="Add Notification"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="Large"/>
+        <Entry x:Name="Description" Placeholder="Write Description"></Entry>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Pick Date" Grid.Column="0" Grid.Row="0"></Label>
+            <Label Text="Pick Time" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"></Label>
+            <DatePicker x:Name="PickedDate" Grid.Column="0" Grid.Row="1"></DatePicker>
+            <TimePicker x:Name="PickedTime" Format="HH:mm" Grid.Column="1" HorizontalOptions="End" Grid.Row="1"></TimePicker>
+        </Grid>
+        <Picker x:Name="Time_Before" Title="Select How Much Time Before You Want To Be Notified" HorizontalOptions="Center" >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>00:00</x:String>
+                    <x:String>00:15</x:String>
+                    <x:String>00:30</x:String>
+                    <x:String>00:45</x:String>
+                    <x:String>01:00</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Repeated?" Grid.Column="0" Grid.Row="0"></Label>
+            <CheckBox Grid.Column="0" Grid.Row="1" x:Name="repeat_check" CheckedChanged="EnableFrequency"></CheckBox>
+            <Picker x:Name="frequency_Pick" Title="Select Frequency" Grid.Row="1" Grid.Column="1" IsEnabled="False" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Everyday</x:String>
+                        <x:String>Weekly</x:String>
+                        <x:String>Monthly</x:String>
+                        <x:String>Yearly</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
+        <Grid HorizontalOptions="Fill" VerticalOptions="Start">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button  Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Start" Text="Add Notification"  x:Name="Add" Clicked="NotificationAdd" FontSize="Medium"/>
+            <Button Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Start" Text="Close" Clicked="Close" FontSize="Medium"/>
+        </Grid>
+        
+    </VerticalStackLayout>
+</ContentPage>

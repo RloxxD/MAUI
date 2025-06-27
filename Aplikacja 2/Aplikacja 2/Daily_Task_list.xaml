@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_2.Daily_Task_list"
+             Title="Daily Tasks">
+    <VerticalStackLayout>
+        <Grid VerticalOptions="Start" HorizontalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Add Daily Task" Clicked="Add_Task" HorizontalOptions="Fill" FontSize="Medium"></Button>
+
+            <Button Grid.Column="1" x:Name="delete_But" Text="Delete" Clicked="Delete_Task" HorizontalOptions="Fill" FontSize="Medium"></Button>
+        </Grid>
+        <Grid RowDefinitions="500,*">
+            <ListView x:Name="dailyTaskList" ItemSelected="Delete" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <SwitchCell OnChanged="Status_Change" Text="{Binding Description}" On="{Binding Status}"></SwitchCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        
+    </VerticalStackLayout>
+</ContentPage>
